@@ -1,0 +1,520 @@
+/* CSS Variables */
+:root {
+    --primary-color: #2e5aab;
+    --secondary-color: #d1e0f0;
+    --background-color: #f4f8fc;
+    --text-color: #333;
+    --border-color: #ddd;
+    --success-color: #4CAF50;
+    --warning-color: #FFC107;
+    --danger-color: #dc3545;
+    --info-color: #2196F3;
+    --excel-color: #217346;
+    --pdf-color: #dc3545;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header img {
+    height: 80px;
+    width: auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.25rem;
+}
+
+/* Introduction Sections */
+.intro-section {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.intro-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.625rem;
+}
+
+.intro-section p {
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+/* Form Styles */
+.info-form {
+    background: white;
+    border-radius: 8px;
+    padding: 1.875rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+    margin-bottom: 1.875rem;
+    padding: 1.25rem;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+}
+
+.input-group {
+    margin-bottom: 1.25rem;
+}
+
+/* Question Form */
+#risk-form {
+    background: white;
+    border-radius: 8px;
+    padding: 1.875rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#risk-form h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.625rem;
+}
+
+#risk-form ol {
+    list-style-position: inside;
+    counter-reset: item;
+    padding: 0;
+}
+
+#risk-form ol > li {
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+/* Input Styles */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.875rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select {
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Input Focus and Error States */
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(46, 90, 171, 0.2);
+}
+
+input.error,
+select.error {
+    border-color: var(--danger-color);
+}
+
+/* Button Styles */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    justify-content: center;
+}
+
+.submit-button,
+.reset-button,
+.export-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+}
+
+.submit-button {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.reset-button {
+    background-color: #6c757d;
+    color: white;
+}
+
+.excel-button {
+    background-color: var(--excel-color);
+    color: white;
+}
+
+.pdf-button {
+    background-color: var(--pdf-color);
+    color: white;
+}
+
+.submit-button:hover,
+.reset-button:hover,
+.export-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Results Container */
+.results-container {
+    background: white;
+    border-radius: 8px;
+    padding: 1.875rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.risk-block {
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-bottom: 1.25rem;
+    font-size: 1.2rem;
+}
+
+/* Risk Level Colors */
+.low-risk { background-color: var(--success-color); color: white; }
+.possible-risk { background-color: var(--info-color); color: white; }
+.substantial-risk { background-color: var(--warning-color); color: black; }
+.high-risk { background-color: #FF9800; color: white; }
+.very-high-risk { background-color: var(--danger-color); color: white; }
+
+.result-section {
+    margin: 1.25rem 0;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.result-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.625rem;
+}
+
+.result-section ul {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    margin-bottom: 0;
+}
+
+.result-section li {
+    margin-bottom: 0.3125rem;
+}
+
+/* Export Buttons */
+.export-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    justify-content: center;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 1.25rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal .close {
+    position: absolute;
+    top: 0.625rem;
+    right: 0.625rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--danger-color);
+    border: none;
+    background: none;
+    padding: 0.3125rem;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* Accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    header img {
+        margin-right: 0;
+        margin-bottom: 0.625rem;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .container {
+        padding: 0.625rem;
+    }
+
+    .form-actions,
+    .export-buttons {
+        flex-direction: column;
+    }
+
+    .submit-button,
+    .reset-button,
+    .export-button {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .form-section,
+    #risk-form,
+    .info-form {
+        padding: 1rem;
+    }
+
+    #risk-form ol > li {
+        padding: 0.75rem;
+    }
+
+    .intro-section {
+        padding: 1rem;
+    }
+
+    .results-container {
+        padding: 1rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 1rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+    }
+
+    .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+    }
+
+    header {
+        box-shadow: none;
+        padding: 1rem;
+        break-after: avoid;
+    }
+
+    .intro-section {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        break-inside: avoid;
+    }
+
+    .export-buttons,
+    .reset-button,
+    .form-actions {
+        display: none;
+    }
+
+    .info-form,
+    #risk-form,
+    .results-container {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        break-inside: avoid;
+        margin: 1rem 0;
+        padding: 1rem;
+    }
+
+    #risk-form ol > li {
+        break-inside: avoid;
+        border: 1px solid #ddd;
+    }
+
+    .risk-block {
+        border: 1px solid #ddd;
+        break-inside: avoid;
+    }
+
+    .result-section {
+        border: 1px solid #ddd;
+        break-inside: avoid;
+    }
+
+    /* Ensure proper color contrast for print */
+    .low-risk { background-color: #e8f5e9 !important; color: black !important; }
+    .possible-risk { background-color: #e3f2fd !important; color: black !important; }
+    .substantial-risk { background-color: #fff3e0 !important; color: black !important; }
+    .high-risk { background-color: #ffebee !important; color: black !important; }
+    .very-high-risk { background-color: #ffcdd2 !important; color: black !important; }
+
+    /* Add URLs after links */
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    /* Hide modal and spinners */
+    .modal,
+    .loading-spinner {
+        display: none !important;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .loading-spinner {
+        animation: none !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #000080;
+        --secondary-color: #e0e0e0;
+        --background-color: white;
+        --text-color: black;
+        --border-color: black;
+    }
+
+    input,
+    select,
+    button {
+        border: 2px solid black !important;
+    }
+
+    .risk-block,
+    .result-section {
+        border: 2px solid black !important;
+    }
+}
